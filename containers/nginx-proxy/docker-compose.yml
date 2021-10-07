@@ -1,0 +1,22 @@
+version: "3"
+services:
+  nginx:
+    container_name: nginx-proxy
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./conf:/etc/nginx/conf.d/
+    environment:
+      - REACT_APP_PRODUCTION=false
+      - PRODUCTION=false
+      - APP_PRODUCTION=false
+  nginx1:
+    container_name: nginx-1
+    image: nginx:latest
+    volumes:
+      - ./nginx-1-html:/usr/share/nginx/html
+networks:
+  default:
+    external:
+      name: minicurso-network

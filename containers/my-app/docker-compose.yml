@@ -1,0 +1,11 @@
+version: "3"
+services:
+  my-app:
+    container_name: my-app
+    image: wellingtonpti/viannajunior:site
+    ports:
+      - 3002:80
+networks:
+  default:
+    external:
+      name: minicurso-network

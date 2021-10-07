@@ -1,0 +1,9 @@
+version: "3"
+services:
+  my-app-backend:
+    container_name: my-app-backend
+    build: .
+networks:
+  default:
+    external:
+      name: minicurso-network
